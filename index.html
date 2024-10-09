@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advent Calendar 2024</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body
+    class="bg-blue-900 flex flex-col items-center justify-center text-white"
+  >
+    <!-- Snow Background -->
+    <div class="snow">
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+    </div>
+
+    <!-- Title and Form -->
+    <h1 class="text-5xl font-bold mb-8 text-center">
+      🎄 🎅 🎁 🕵️‍♀️ <br />
+      HO HO HO!
+    </h1>
+    <div class="w-full max-w-xs">
+      <input
+        id="codeInput"
+        type="text"
+        placeholder="Entrer le code du jour"
+        class="w-full p-3 rounded-lg border border-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+      />
+      <button
+        onclick="checkCode()"
+        class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg"
+      >
+        Envoyer
+      </button>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

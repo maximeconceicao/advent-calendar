@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advent Calendar - Day</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body
+    class="bg-blue-900 flex flex-col items-center justify-center text-white h-screen"
+  >
+    <!-- Snow Background -->
+    <div class="snow">
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+    </div>
+
+    <!-- Title -->
+    <h1 id="dayTitle" class="text-5xl font-bold mb-8">Jour</h1>
+
+    <!-- Image (Placeholder) -->
+    <img
+      id="dayImage"
+      src=""
+      alt="Day X Image"
+      class="w-64 h-64 bg-gray-100 rounded-lg mb-6"
+    />
+
+    <!-- Return Button -->
+    <button
+      onclick="goBack()"
+      class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg"
+    >
+      Retour
+    </button>
+
+    <script src="main.js"></script>
+    <script>
+      // Récupérer les paramètres de l'URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const code = urlParams.get("code");
+
+      const codeKey = getCodeKey(code);
+
+      // // Modifier le contenu du titre et de l'image
+      const dayTitle = document.getElementById("dayTitle");
+      dayTitle.textContent = `Jour ${codeKey}`;
+
+      const dayImage = document.getElementById("dayImage");
+      dayImage.alt = `Day ${codeKey} Image`;
+      dayImage.src = `assets/images/${codeKey}.jpg`; // Assurez-vous d'avoir les images correspondantes
+
+      // Fonction pour retourner en arrière
+      function goBack() {
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>
